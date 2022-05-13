@@ -1,0 +1,21 @@
+.menu {
+    -fx-background-color: #d5951d;
+    -fx-background-image: url('images/menu2.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: cover, auto;
+}
+
+.btnMenu {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 28;
+    -fx-text-fill: #fff;
+    -fx-background-image: url('images/board.png');
+}
+
+.btnMenu:hover {
+    -fx-text-fill: #000;
+}
