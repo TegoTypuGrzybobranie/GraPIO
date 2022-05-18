@@ -4,8 +4,8 @@ import javafx.scene.paint.Color;
 
 public abstract class Field {
     // True -> special
-    private boolean isSpecial;
-    private PlayerClass playerOn;
+    protected boolean isSpecial;
+    protected PlayerClass playerOn;
 
     public boolean isSpecial() {
         return isSpecial;
