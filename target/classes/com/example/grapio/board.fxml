@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="798.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle fx:id="field3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field7" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field8" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="138.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="startField" arcHeight="5.0" arcWidth="5.0" fill="#00ff51" height="50.0" layoutX="197.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle fx:id="field1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="488.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field9" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field10" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="272.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field11" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field12" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="372.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field13" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field14" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="472.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field15" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="522.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field16" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field17" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="622.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field18" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field24" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field23" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field22" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field21" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field20" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field19" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="138.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field27" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field26" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="488.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field25" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field34" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field33" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="372.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field32" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field31" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="472.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field30" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="522.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field29" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field28" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="622.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field37" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field38" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field39" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field40" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field41" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field35" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="488.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field36" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field42" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="372.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field43" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field44" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="472.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field45" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="522.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field46" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field50" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field49" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field48" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field47" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field51" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field53" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="472.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field52" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="522.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field54" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field55" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="field156" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="finishField" arcHeight="5.0" arcWidth="5.0" fill="RED" height="50.0" layoutX="397.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Button fx:id="throwDice" layoutX="787.0" layoutY="88.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" text="Rzuć kostką">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
