@@ -16,6 +16,14 @@
     -fx-background-image: url('images/board.png');
 }
 
+.game  {
+    -fx-background-color: #d5951d;
+    -fx-background-image: url('images/menu.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: cover, auto;
+}
+
 .btnMenu:hover {
     -fx-text-fill: #000;
 }
