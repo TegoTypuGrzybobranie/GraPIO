@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1300.0" styleClass="game" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="game" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grapio.GameController">
    <children>
       <Rectangle fx:id="field3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="field4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
@@ -65,10 +65,15 @@
       <Rectangle fx:id="field55" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="field56" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="finishField" arcHeight="5.0" arcWidth="5.0" fill="RED" height="50.0" layoutX="397.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-      <Button fx:id="throwDice" layoutX="787.0" layoutY="88.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" text="Rzuć kostką">
+      <Button fx:id="throwDice" layoutX="787.0" layoutY="88.0" mnemonicParsing="false" onAction="#throwDice" prefHeight="100.0" prefWidth="250.0" text="Rzuć kostką">
          <font>
             <Font size="37.0" />
          </font>
       </Button>
+      <Label fx:id="diceLabel" layoutX="874.0" layoutY="214.0">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
