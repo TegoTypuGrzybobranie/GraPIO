@@ -6,7 +6,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="menu" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grapio.MenuController">
    <children>
       <Button layoutX="573.0" layoutY="240.0" mnemonicParsing="false" onAction="#startGame" prefHeight="75.0" prefWidth="221.0" styleClass="btnMenu" text="Start" />
-      <Button layoutX="573.0" layoutY="401.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="221.0" styleClass="btnMenu" text="Opcje" />
+      <Button layoutX="573.0" layoutY="401.0" mnemonicParsing="false" onAction="#toOptions" prefHeight="75.0" prefWidth="221.0" styleClass="btnMenu" text="Opcje" />
       <Button layoutX="573.0" layoutY="568.0" mnemonicParsing="false" onAction="#exit" prefHeight="75.0" prefWidth="221.0" styleClass="btnMenu" text="Wyjście" />
    </children>
 </Pane>
