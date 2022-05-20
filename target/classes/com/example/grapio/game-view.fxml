@@ -1,79 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="game" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grapio.GameController">
    <children>
-      <Rectangle fx:id="field3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field7" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field8" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="138.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="startField" arcHeight="5.0" arcWidth="5.0" fill="#00ff51" height="50.0" layoutX="197.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-      <Rectangle fx:id="field1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="488.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field9" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="222.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field10" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="272.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field11" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field12" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="372.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field13" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field14" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="472.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field15" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="522.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field16" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field17" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="622.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field18" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field24" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field23" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field22" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field21" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field20" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field19" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="138.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field27" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field26" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="488.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field25" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="672.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field34" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field33" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="372.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field32" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field31" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="472.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field30" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="522.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field29" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field28" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="622.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field37" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field38" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field39" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field40" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field41" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field35" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="488.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field36" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="322.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field42" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="372.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field43" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field44" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="472.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field45" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="522.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field46" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field50" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field49" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field48" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field47" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field51" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="572.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field53" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="472.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field52" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="522.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field54" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field55" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="field56" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="422.0" layoutY="338.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-      <Rectangle fx:id="finishField" arcHeight="5.0" arcWidth="5.0" fill="RED" height="50.0" layoutX="397.0" layoutY="288.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-      <Button fx:id="throwDice" layoutX="787.0" layoutY="88.0" mnemonicParsing="false" onAction="#throwDice" prefHeight="100.0" prefWidth="250.0" text="Rzuć kostką">
+      <Button fx:id="throwDice" layoutX="936.0" layoutY="55.0" mnemonicParsing="false" onAction="#throwDice" prefHeight="100.0" prefWidth="250.0" styleClass="btnRoll" text="Rzuć kostką">
          <font>
             <Font size="37.0" />
          </font>
       </Button>
-      <Label fx:id="diceLabel" layoutX="874.0" layoutY="214.0">
+      <Label fx:id="diceLabel" layoutX="1080.0" layoutY="214.0" prefWidth="0.0">
          <font>
             <Font size="33.0" />
          </font>
       </Label>
+      <ImageView fx:id="f1" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f2" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f3" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f4" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f5" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f6" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f7" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f8" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f9" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f10" fitHeight="70.0" fitWidth="70.0" layoutX="164.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f11" fitHeight="70.0" fitWidth="70.0" layoutX="234.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f12" fitHeight="70.0" fitWidth="70.0" layoutX="304.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f13" fitHeight="70.0" fitWidth="70.0" layoutX="374.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f14" fitHeight="70.0" fitWidth="70.0" layoutX="444.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f15" fitHeight="70.0" fitWidth="70.0" layoutX="514.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f16" fitHeight="70.0" fitWidth="70.0" layoutX="584.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f17" fitHeight="70.0" fitWidth="70.0" layoutX="654.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f18" fitHeight="70.0" fitWidth="70.0" layoutX="724.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f19" fitHeight="70.0" fitWidth="70.0" layoutX="724.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f20" fitHeight="70.0" fitWidth="70.0" layoutX="724.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f21" fitHeight="70.0" fitWidth="70.0" layoutX="724.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f22" fitHeight="70.0" fitWidth="70.0" layoutX="724.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f23" fitHeight="70.0" fitWidth="70.0" layoutX="724.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f24" fitHeight="70.0" fitWidth="70.0" layoutX="724.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f25" fitHeight="70.0" fitWidth="70.0" layoutX="724.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f26" fitHeight="70.0" fitWidth="70.0" layoutX="724.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f27" fitHeight="70.0" fitWidth="70.0" layoutX="724.0" layoutY="665.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f28" fitHeight="70.0" fitWidth="70.0" layoutX="654.0" layoutY="665.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f29" fitHeight="70.0" fitWidth="70.0" layoutX="584.0" layoutY="665.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f30" fitHeight="70.0" fitWidth="70.0" layoutX="514.0" layoutY="665.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f31" fitHeight="70.0" fitWidth="70.0" layoutX="444.0" layoutY="665.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f32" fitHeight="70.0" fitWidth="70.0" layoutX="374.0" layoutY="665.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f33" fitHeight="70.0" fitWidth="70.0" layoutX="304.0" layoutY="665.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f34" fitHeight="70.0" fitWidth="70.0" layoutX="234.0" layoutY="665.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f35" fitHeight="70.0" fitWidth="70.0" layoutX="234.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f36" fitHeight="70.0" fitWidth="70.0" layoutX="234.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f37" fitHeight="70.0" fitWidth="70.0" layoutX="234.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f38" fitHeight="70.0" fitWidth="70.0" layoutX="234.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f39" fitHeight="70.0" fitWidth="70.0" layoutX="234.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f40" fitHeight="70.0" fitWidth="70.0" layoutX="234.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f41" fitHeight="70.0" fitWidth="70.0" layoutX="234.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f42" fitHeight="70.0" fitWidth="70.0" layoutX="304.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f43" fitHeight="70.0" fitWidth="70.0" layoutX="374.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f44" fitHeight="70.0" fitWidth="70.0" layoutX="444.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f45" fitHeight="70.0" fitWidth="70.0" layoutX="514.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f46" fitHeight="70.0" fitWidth="70.0" layoutX="584.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f47" fitHeight="70.0" fitWidth="70.0" layoutX="584.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f48" fitHeight="70.0" fitWidth="70.0" layoutX="584.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f49" fitHeight="70.0" fitWidth="70.0" layoutX="584.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f50" fitHeight="70.0" fitWidth="70.0" layoutX="584.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f51" fitHeight="70.0" fitWidth="70.0" layoutX="584.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f52" fitHeight="70.0" fitWidth="70.0" layoutX="514.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f53" fitHeight="70.0" fitWidth="70.0" layoutX="444.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f54" fitHeight="70.0" fitWidth="70.0" layoutX="374.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f55" fitHeight="70.0" fitWidth="70.0" layoutX="374.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f56" fitHeight="70.0" fitWidth="70.0" layoutX="374.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

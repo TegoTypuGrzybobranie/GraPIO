@@ -18,12 +18,19 @@
 
 .game  {
     -fx-background-color: #d5951d;
-    -fx-background-image: url('images/menu.png');
+    -fx-background-image: url('images/game.png');
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
     -fx-background-size: cover, auto;
 }
 
-.btnMenu:hover {
+.btnRoll {
+    -fx-background-color: #994e4f;
+    -fx-border-width: 1;
+    -fx-border-color: #000;
+    -fx-text-fill: #fff;
+}
+
+.btnMenu:hover, .btnRoll:hover {
     -fx-text-fill: #000;
 }
