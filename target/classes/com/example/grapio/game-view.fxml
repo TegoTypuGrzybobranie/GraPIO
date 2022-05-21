@@ -3,7 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="game" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grapio.GameController">
@@ -74,5 +73,7 @@
       <ImageView fx:id="f54" fitHeight="70.0" fitWidth="70.0" layoutX="374.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="f55" fitHeight="70.0" fitWidth="70.0" layoutX="374.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="f56" fitHeight="70.0" fitWidth="70.0" layoutX="374.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f0" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="665.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="f57" fitHeight="70.0" fitWidth="70.0" layoutX="374.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

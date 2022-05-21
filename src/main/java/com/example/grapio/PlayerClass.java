@@ -28,7 +28,11 @@ public class PlayerClass {
         int move = this.rollTheDice();
         if (move == 0)
             return false;
+
         position += move;
+        if(position > Board.MAX_FILED_INDEX)
+            position = Board.MAX_FILED_INDEX;
+
         return true;
     }
 
