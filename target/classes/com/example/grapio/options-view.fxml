@@ -9,7 +9,7 @@
 <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="menu" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grapio.MenuController">
    <children>
       <Button layoutX="58.0" layoutY="645.0" mnemonicParsing="false" onAction="#toMenu" prefHeight="75.0" prefWidth="221.0" styleClass="btnMenu" text="Powrót" />
-      <Slider fx:id="playerSlider" blockIncrement="4.0" layoutX="169.0" layoutY="149.0" majorTickUnit="2.0" max="4.0" min="2.0" minorTickCount="1" onMouseClicked="#xd" prefHeight="150.0" prefWidth="327.0" showTickMarks="true" snapToTicks="true" value="4.0" />
+      <Slider fx:id="playerSlider" blockIncrement="4.0" layoutX="169.0" layoutY="149.0" majorTickUnit="2.0" max="4.0" min="2.0" minorTickCount="1" onMouseClicked="#hideOptionsLabels" onMouseDragged="#hideOptionsLabels" prefHeight="150.0" prefWidth="327.0" showTickMarks="true" snapToTicks="true" value="4.0" />
       <Label layoutX="14.0" layoutY="149.0" text="Liczba graczy: " textFill="WHITE">
          <font>
             <Font name="Lato Black" size="32.0" />
@@ -44,7 +44,7 @@
          <children>
             <ImageView fx:id="p1Image" fitHeight="70.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <image>
-                  <Image url="@images/players/1.png" />
+                  <Image url="@images/players/0.png" />
                </image>
                <GridPane.margin>
                   <Insets right="20.0" top="10.0" />
@@ -52,7 +52,7 @@
             </ImageView>
             <ImageView fx:id="p2Image" fitHeight="70.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <image>
-                  <Image url="@images/players/2.png" />
+                  <Image url="@images/players/1.png" />
                </image>
                <GridPane.margin>
                   <Insets right="20.0" top="10.0" />
@@ -60,7 +60,7 @@
             </ImageView>
             <ImageView fx:id="p3Image" fitHeight="70.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <image>
-                  <Image url="@images/players/3.png" />
+                  <Image url="@images/players/2.png" />
                </image>
                <GridPane.margin>
                   <Insets right="18.0" top="10.0" />
@@ -92,7 +92,7 @@
             </TextField>
             <ImageView fx:id="p4Image" fitHeight="70.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <image>
-                  <Image url="@images/players/4.png" />
+                  <Image url="@images/players/3.png" />
                </image>
                <GridPane.margin>
                   <Insets right="20.0" top="10.0" />

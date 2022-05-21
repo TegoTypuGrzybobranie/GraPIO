@@ -2,36 +2,30 @@ package com.example.grapio;
 
 public class PlayerClass {
     // blocked for $blocked turns
-    private short blocked;
+    private short blocked = 0;
+    private int position = 0;
     private String nickName;
-    private int position;
     // How many rolls were made
-    private int diceRollCount;
+    private int diceRollCount = 0;
 
     PlayerClass(String nickName) {
         this.nickName = nickName;
     }
 
-    public int rollTheDice() {
-        if (blocked > 0) {
-            blocked--;
-            return 0;
-        }
-        else {
-            // ToDo
-            int ret = 0;
-            return ret;
-        }
-    }
 
-    public boolean movePlayer() {
-        int move = this.rollTheDice();
+    public boolean movePlayer(int move) {
         if (move == 0)
             return false;
 
+        if (blocked > 0) {
+            blocked--;
+            return false;
+        }
+
+        diceRollCount++;
         position += move;
-        if(position > Board.MAX_FILED_INDEX)
-            position = Board.MAX_FILED_INDEX;
+        if(position > Board.FIELD_META_INDEX)
+            position = Board.FIELD_META_INDEX;
 
         return true;
     }
@@ -51,10 +45,6 @@ public class PlayerClass {
 
     public int getPosition() {
         return position;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
     }
 
     public int getDiceRollCount() {

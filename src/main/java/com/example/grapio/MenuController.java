@@ -70,7 +70,7 @@ public class MenuController {
     private TextField p1Name, p2Name, p3Name, p4Name;
 
     @FXML
-    private void xd() {
+    private void hideOptionsLabels() {
         switch ((int) playerSlider.getValue()) {
             case 2 -> {
                 p3Image.setVisible(false);
