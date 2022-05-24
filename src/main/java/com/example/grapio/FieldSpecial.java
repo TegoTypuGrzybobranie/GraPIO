@@ -24,4 +24,22 @@ public class FieldSpecial extends Field{
     public Effects getEffect(int effect_num){
         return effs[effect_num];
     }
+
+    public void nMove(PlayerClass player, int n){
+        player.movePlayer(n);
+    }
+
+    public void diceMove(PlayerClass player, Board board, GameController controller){
+        int roll = board.dice.giveRandom(1, 6);
+        controller.diceLabel.setText(((Integer)roll).toString());
+        board.tryMove(roll);
+    }
+
+    public void skipTurn(PlayerClass player, short n){
+        player.setBlocked(n);
+    }
+
+    public void moveSpecific(PlayerClass player, Board board, int pos){
+        board.tryMove(pos-player.getPosition());
+    }
 }
