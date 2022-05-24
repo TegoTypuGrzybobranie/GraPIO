@@ -4,7 +4,7 @@ public class PlayerClass {
     // blocked for $blocked turns
     private short blocked = 0;
     private int position = 0;
-    private String nickName;
+    private final String nickName;
     // How many rolls were made
     private int diceRollCount = 0;
 
@@ -22,10 +22,28 @@ public class PlayerClass {
             return false;
         }
 
+
         diceRollCount++;
         position += move;
-        if(position > Board.FIELD_META_INDEX)
+        if (position > Board.FIELD_META_INDEX)
             position = Board.FIELD_META_INDEX;
+
+        int rem = position;
+        if (Board.isSpecial(position)) {
+            if (Board.getEffect(position) == Effect.BLOCKS) {
+                this.blocked += Board.getValue(position);
+                System.out.println("Blocked for " + Board.getValue(position));
+            }
+            else {
+                System.out.println("Moves for " + Board.getValue(position));
+                for (int i = 0; i < 100000000; i++)
+                    for (int j = 0; j < 25; j++);
+
+                position += Board.getValue(position);
+
+                System.out.println("Ok");
+            }
+        }
 
         return true;
     }
