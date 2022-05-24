@@ -56,9 +56,9 @@ public class Board {
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++)
             if (specialFields[i].getIndex() == index)
                 return specialFields[i].getEffect();
-
         return null;
     }
+    
     public static int getValue(int index) {
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++)
             if (specialFields[i].getIndex() == index)

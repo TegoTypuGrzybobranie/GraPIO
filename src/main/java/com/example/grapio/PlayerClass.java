@@ -22,7 +22,6 @@ public class PlayerClass {
             return false;
         }
 
-
         diceRollCount++;
         position += move;
         if (position > Board.FIELD_META_INDEX)
