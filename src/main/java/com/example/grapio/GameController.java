@@ -44,6 +44,11 @@ public class GameController {
                 f41, f42, f43, f44, f45, f46, f47, f48, f49, f50,
                 f51, f52, f53, f54, f55, f56, f57p0, f57p1, f57p2, f57p3);
 
+        Map<String, Boolean> fieldAttributes = new HashMap<>();
+        for(int i = 0; i <= 57; i++){
+            fieldAttributes.put("f"+i, i % 7 == 0);
+        }
+
         List<PlayerClass> players = new ArrayList<>();
         for(int i = 0; i < maxPlayers; i++)
             players.add(new PlayerClass(playerName[i]));
