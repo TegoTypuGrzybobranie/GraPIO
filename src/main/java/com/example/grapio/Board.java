@@ -102,7 +102,17 @@ public class Board {
     private final List<ImageView> fieldsImg;
     private final List<PlayerClass> players;
 
+    public PlayerClass getPlayers(int id) {
+        if(id < 0 && id >= maxPlayers) return null;
+        return players.get(id);
+    }
+
     private final int maxPlayers;
+
+    public int getWhichPlayer() {
+        return whichPlayer;
+    }
+
     private int whichPlayer = 0;
 
     public Board(List<ImageView> fieldsImg, int maxPlayers, List<PlayerClass> players) {

@@ -40,3 +40,7 @@
     -fx-font-size: 32;
     -fx-control-inner-background: #d5951d;
 }
+
+.playerName {
+    -fx-text-fill: #fff;
+}

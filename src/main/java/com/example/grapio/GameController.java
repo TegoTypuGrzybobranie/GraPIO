@@ -24,15 +24,20 @@ public class GameController {
     private Board board;
 
     @FXML
-    Label diceLabel;
+    private Label playerLabel;
+
+    @FXML
+    private ImageView playerImage, diceImage;
 
     @FXML
     public void throwDice() {
         int roll = board.dice.giveRandom(1, 6);
-        diceLabel.setText(((Integer)roll).toString());
+        diceImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/dice/dice" +((Integer)roll).toString()+".png"))));
 
         board.tryMove(roll);
         board.nextPlayer();
+        playerLabel.setText(board.getPlayers(board.getWhichPlayer()).getNickName());
+        playerImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" +((Integer)board.getWhichPlayer()).toString()+".png"))));
     }
 
     public void initializeBoard(int maxPlayers, String[] playerName) {
@@ -49,6 +54,8 @@ public class GameController {
             players.add(new PlayerClass(playerName[i]));
 
         board = new Board(fieldsImg, maxPlayers, players);
+
+        playerLabel.setText(board.getPlayers(0).getNickName());
 
         switch (maxPlayers) {
             //Sets star field images

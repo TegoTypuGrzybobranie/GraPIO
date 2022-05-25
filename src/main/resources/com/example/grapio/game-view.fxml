@@ -7,16 +7,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="game" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grapio.GameController">
    <children>
-      <Button fx:id="throwDice" layoutX="936.0" layoutY="55.0" mnemonicParsing="false" onAction="#throwDice" prefHeight="100.0" prefWidth="250.0" styleClass="btnRoll" text="Rzuć kostką">
+      <Button fx:id="throwDice" layoutX="955.0" layoutY="595.0" mnemonicParsing="false" onAction="#throwDice" prefHeight="100.0" prefWidth="250.0" styleClass="btnRoll" text="Rzuć kostką">
          <font>
             <Font size="37.0" />
          </font>
       </Button>
-      <Label fx:id="diceLabel" layoutX="1080.0" layoutY="214.0" prefWidth="0.0">
-         <font>
-            <Font size="33.0" />
-         </font>
-      </Label>
       <ImageView fx:id="f1" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="f2" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="f3" fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true" />
@@ -81,5 +76,15 @@
       <ImageView fx:id="f57p1" fitHeight="46.0" fitWidth="46.0" layoutX="359.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="f57p2" fitHeight="46.0" fitWidth="46.0" layoutX="407.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="f57p3" fitHeight="46.0" fitWidth="46.0" layoutX="451.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="playerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="859.0" layoutY="115.0" prefHeight="54.0" prefWidth="250.0" styleClass="playerName" textAlignment="CENTER">
+         <font>
+            <Font size="45.0" />
+         </font></Label>
+      <ImageView fx:id="playerImage" fitHeight="88.0" fitWidth="87.0" layoutX="1196.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/players/0.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="diceImage" fitHeight="150.0" fitWidth="200.0" layoutX="1009.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
