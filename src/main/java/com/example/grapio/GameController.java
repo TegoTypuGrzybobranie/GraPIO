@@ -1,10 +1,13 @@
 package com.example.grapio;
 
 
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
+
 import java.util.*;
 
 public class GameController {
@@ -22,6 +25,7 @@ public class GameController {
 
 
     private Board board;
+    private final PauseTransition pause = new PauseTransition(Duration.seconds(1));
 
     @FXML
     private Label playerLabel;
@@ -32,7 +36,7 @@ public class GameController {
     @FXML
     public void throwDice() {
         int roll = board.dice.giveRandom(1, 6);
-        diceImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/dice/dice" +((Integer)roll).toString()+".png"))));
+        showDice(roll);
 
         board.tryMove(roll);
         board.nextPlayer();
@@ -67,5 +71,14 @@ public class GameController {
                 f0p0.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/0.png"))));
                 f0p1.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/1.png"))));
         }
+    }
+
+    private void showDice(int num) {
+        if(num < 0 || num > 6)
+            return;
+
+        diceImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/dice/dice" +((Integer)num).toString()+".png"))));
+        pause.setOnFinished(e -> diceImage.setImage(null));
+        pause.play();
     }
 }
