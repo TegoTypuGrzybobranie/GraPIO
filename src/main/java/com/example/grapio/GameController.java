@@ -1,10 +1,21 @@
 package com.example.grapio;
 
 
+import javafx.animation.PauseTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.io.IOException;
 import java.util.*;
 
 public class GameController {
@@ -20,24 +31,40 @@ public class GameController {
     private ImageView f0p0, f0p1, f0p2, f0p3, //start
                 f57p0, f57p1, f57p2, f57p3; //meta
 
+    @FXML
+    private Button btnThrow, btnEnd;
 
     private Board board;
+    private final PauseTransition pause = new PauseTransition(Duration.seconds(1));
 
     @FXML
-    private Label playerLabel;
+    private Label playerLabel, rankList;
 
     @FXML
-    private ImageView playerImage, diceImage;
+    private ImageView playerImage, diceImage, rankImage;
 
     @FXML
     public void throwDice() {
         int roll = board.dice.giveRandom(1, 6);
-        diceImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/dice/dice" +((Integer)roll).toString()+".png"))));
+        showDice(roll);
 
         board.tryMove(roll);
-        board.nextPlayer();
+        if(!board.nextPlayer()) {
+            endGame();
+            return;
+        }
+
         playerLabel.setText(board.getPlayers(board.getWhichPlayer()).getNickName());
         playerImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" +((Integer)board.getWhichPlayer()).toString()+".png"))));
+    }
+
+    @FXML
+    private void toMenu(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu-view.fxml")));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void initializeBoard(int maxPlayers, String[] playerName) {
@@ -67,5 +94,27 @@ public class GameController {
                 f0p0.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/0.png"))));
                 f0p1.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/1.png"))));
         }
+    }
+
+    private void showDice(int num) {
+        if(num < 0 || num > 6) {
+            return;
+        }
+
+        diceImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/dice/dice" +((Integer)num).toString()+".png"))));
+        pause.setOnFinished(e -> diceImage.setImage(null));
+        pause.play();
+    }
+
+    private void endGame() {
+        btnThrow.setDisable(true);
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < board.getMaxPlayers(); i++) {
+            res.append(i + 1).append(". ").append(board.getPlayers(board.getRank()[i]).getNickName()).append("\n");
+        }
+
+        rankImage.setVisible(true);
+        rankList.setText(res.toString());
+        btnEnd.setVisible(true);
     }
 }
