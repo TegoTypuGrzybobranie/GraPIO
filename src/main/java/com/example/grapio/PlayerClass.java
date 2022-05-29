@@ -3,7 +3,7 @@ package com.example.grapio;
 public class PlayerClass {
     // blocked for $blocked turns
     private short blocked = 0;
-    private int position = 53;
+    private int position = 0;
     private boolean finished = false;
     private final String nickName;
     // How many rolls were made

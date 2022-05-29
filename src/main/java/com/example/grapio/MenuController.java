@@ -61,7 +61,7 @@ public class MenuController {
     @FXML
     private Slider playerSlider;
     private int maxPlayers = 4;
-    private String[] playerName = {"Player1", "Player2", "Player3", "Player4"};
+    private String[] playerName = {"Player 1", "Player 2", "Player 3", "Player 4"};
 
 
     @FXML
