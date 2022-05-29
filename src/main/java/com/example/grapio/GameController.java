@@ -3,6 +3,7 @@ package com.example.grapio;
 
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -23,12 +24,14 @@ public class GameController {
     private ImageView f0p0, f0p1, f0p2, f0p3, //start
                 f57p0, f57p1, f57p2, f57p3; //meta
 
+    @FXML
+    private Button btnThrow;
 
     private Board board;
     private final PauseTransition pause = new PauseTransition(Duration.seconds(1));
 
     @FXML
-    private Label playerLabel;
+    private Label playerLabel, rankList;
 
     @FXML
     private ImageView playerImage, diceImage;
@@ -39,7 +42,11 @@ public class GameController {
         showDice(roll);
 
         board.tryMove(roll);
-        board.nextPlayer();
+        if(!board.nextPlayer()) {
+            endGame();
+            return;
+        }
+
         playerLabel.setText(board.getPlayers(board.getWhichPlayer()).getNickName());
         playerImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" +((Integer)board.getWhichPlayer()).toString()+".png"))));
     }
@@ -74,11 +81,21 @@ public class GameController {
     }
 
     private void showDice(int num) {
-        if(num < 0 || num > 6)
+        if(num < 0 || num > 6) {
             return;
+        }
 
         diceImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/dice/dice" +((Integer)num).toString()+".png"))));
         pause.setOnFinished(e -> diceImage.setImage(null));
         pause.play();
+    }
+
+    private void endGame() {
+        btnThrow.setDisable(true);
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < board.getMaxPlayers(); i++) {
+            res.append(i + 1).append(". ").append(board.getPlayers(board.getRank()[i]).getNickName()).append("\n");
+        }
+        rankList.setText(res.toString());
     }
 }

@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="game" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.grapio.GameController">
    <children>
-      <Button fx:id="throwDice" layoutX="955.0" layoutY="595.0" mnemonicParsing="false" onAction="#throwDice" prefHeight="100.0" prefWidth="250.0" styleClass="btnRoll" text="Rzuć kostką">
+      <Button fx:id="btnThrow" layoutX="955.0" layoutY="595.0" mnemonicParsing="false" onAction="#throwDice" prefHeight="100.0" prefWidth="250.0" styleClass="btnRoll" text="Rzuć kostką">
          <font>
             <Font size="37.0" />
          </font>
@@ -86,5 +86,6 @@
          </image>
       </ImageView>
       <ImageView fx:id="diceImage" fitHeight="150.0" fitWidth="200.0" layoutX="1009.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="rankList" layoutX="845.0" layoutY="318.0" text="Label" />
    </children>
 </AnchorPane>
