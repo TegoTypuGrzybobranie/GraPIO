@@ -1,6 +1,5 @@
 package com.example.grapio;
 
-
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -1,6 +1,7 @@
 package com.example.grapio;
 import java.util.Random;
 
+
 public class Dice {
     Random random;
 

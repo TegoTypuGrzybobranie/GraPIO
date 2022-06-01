@@ -68,7 +68,11 @@ public class Board {
     private static SpecialField[] specialFields;
     private final int maxPlayers;
 
+<<<<<<< HEAD
+    private int[] rank;
+=======
     private final int[] rank;
+>>>>>>> origin/main
     private int placeIndex = 0;
 
     private int whichPlayer = 0;
@@ -115,10 +119,17 @@ public class Board {
         int position = players.get(whichPlayer).getPosition();
         if (position == FIELD_META_INDEX) {
             //META IMAGES
+<<<<<<< HEAD
+            fieldsImg.get(position + FIELD_START_INDEX + whichPlayer).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + ((Integer) whichPlayer).toString() + ".png"))));
+        } else {
+            //STANDARD IMAGES
+            fieldsImg.get(position + FIELD_START_INDEX).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + ((Integer) whichPlayer).toString() + ".png"))));
+=======
             fieldsImg.get(position + FIELD_START_INDEX + whichPlayer).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + whichPlayer + ".png"))));
         } else {
             //STANDARD IMAGES
             fieldsImg.get(position + FIELD_START_INDEX).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + whichPlayer + ".png"))));
+>>>>>>> origin/main
         }
     }
 
@@ -171,6 +182,20 @@ public class Board {
         Random random = new Random();
         specialFields = new SpecialField[SPECIAL_FIELDS_NUMBER];
 
+<<<<<<< HEAD
+            int x = random.nextInt(2);
+            specialFields[i] = new SpecialField();
+            if (x == 0) {
+                specialFields[i].setEffect(Effect.BLOCKS);
+                specialFields[i].setValue(random.nextInt(2) + 1);
+            } else {
+                specialFields[i].setEffect(Effect.MOVES);
+                specialFields[i].setValue(random.nextInt(12) - 6);
+            }
+            specialFields[i].setIndex(random.nextInt(FIELD_START_INDEX + 1, FIELD_META_INDEX - 1));
+        }
+        System.out.println();
+=======
         specialFields[0].setIndex(5);
         specialFields[0].setValue(2);
         specialFields[0].setEffect(Effect.BLOCKS);
@@ -223,6 +248,7 @@ public class Board {
         specialFields[12].setValue(-5);
         specialFields[12].setEffect(Effect.MOVES);
 
+>>>>>>> origin/main
     }
 
     public static boolean isSpecial(int index) {
