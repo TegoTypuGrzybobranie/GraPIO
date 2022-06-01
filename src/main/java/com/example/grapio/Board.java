@@ -48,6 +48,11 @@ public class Board {
     public static final int FIELD_META_INDEX = 57;
     public static final int SPECIAL_FIELDS_NUMBER = 5;
 
+    public static final int MAX_BLOCKED = 2;
+    public static final int MAX_MOVE_DISTANCE = 6;
+    // How many effects do we implement
+    public static final int EFFECT_NUMBER = 2;
+
     public Board(List<ImageView> fieldsImg, int maxPlayers, List<PlayerClass> players) {
         setSpecialFields();
         this.fieldsImg = fieldsImg;
@@ -63,7 +68,7 @@ public class Board {
     private static SpecialField[] specialFields;
     private final int maxPlayers;
 
-    private int [] rank;
+    private final int[] rank;
     private int placeIndex = 0;
 
     private int whichPlayer = 0;
@@ -71,6 +76,7 @@ public class Board {
     public int getWhichPlayer() {
         return whichPlayer;
     }
+
     public int getMaxPlayers() {
         return maxPlayers;
     }
@@ -80,27 +86,26 @@ public class Board {
     }
 
     public PlayerClass getPlayers(int id) {
-        if(id < 0 && id >= maxPlayers) return null;
+        if (id < 0 && id >= maxPlayers) return null;
         return players.get(id);
     }
 
     public boolean nextPlayer() {
-        for(int i = 0; i < maxPlayers; i++) {
+        for (int i = 0; i < maxPlayers; i++) {
             whichPlayer = whichPlayer + 1 < maxPlayers ? whichPlayer + 1 : 0;
-            if(!players.get(whichPlayer).isFinished()) {
+            if (!players.get(whichPlayer).isFinished()) {
                 return true;
             }
         }
-       return false;
+        return false;
     }
 
     private void updateLastFieldImage() {
         int position = players.get(whichPlayer).getPosition();
-        if(position == 0) {
+        if (position == 0) {
             //START IMAGES
             fieldsImg.get(position + whichPlayer).setImage(null);
-        }
-        else {
+        } else {
             //STANDARD IMAGES
             fieldsImg.get(position + FIELD_START_INDEX).setImage(null);
         }
@@ -110,11 +115,10 @@ public class Board {
         int position = players.get(whichPlayer).getPosition();
         if (position == FIELD_META_INDEX) {
             //META IMAGES
-            fieldsImg.get(position + FIELD_START_INDEX + whichPlayer).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" +((Integer)whichPlayer).toString()+".png"))));
-        }
-        else {
+            fieldsImg.get(position + FIELD_START_INDEX + whichPlayer).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + whichPlayer + ".png"))));
+        } else {
             //STANDARD IMAGES
-            fieldsImg.get(position + FIELD_START_INDEX).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" +((Integer)whichPlayer).toString()+".png"))));
+            fieldsImg.get(position + FIELD_START_INDEX).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + whichPlayer + ".png"))));
         }
     }
 
@@ -122,7 +126,7 @@ public class Board {
         updateLastFieldImage();
 
         players.get(whichPlayer).movePlayer(move);
-        if(players.get(whichPlayer).isFinished()) {
+        if (players.get(whichPlayer).isFinished()) {
             rank[placeIndex++] = whichPlayer;
         }
 
@@ -135,11 +139,11 @@ public class Board {
             return;
 
         for (int i = 0; i < maxPlayers; i++) {
-            if(i == whichPlayer)
+            if (i == whichPlayer)
                 continue;
 
             if (positionToMove == players.get(i).getPosition() && positionToMove != FIELD_META_INDEX) {
-                tryMove(move-1);
+                tryMove(move - 1);
                 return;
             }
         }
@@ -155,10 +159,11 @@ public class Board {
     }
 
     public static int getValue(int index) {
-        for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++)
-            if (specialFields[i].getIndex() == index)
+        for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
+            if (specialFields[i].getIndex() == index) {
                 return specialFields[i].getValue();
-        System.out.println("Dupa");
+            }
+        }
         return 0;
     }
 
@@ -167,19 +172,17 @@ public class Board {
         specialFields = new SpecialField[SPECIAL_FIELDS_NUMBER];
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
 
-            int x = random.nextInt(2);
+            int x = random.nextInt(EFFECT_NUMBER);
             specialFields[i] = new SpecialField();
             if (x == 0) {
                 specialFields[i].setEffect(Effect.BLOCKS);
-                specialFields[i].setValue(random.nextInt(2) + 1);
-            }
-            else {
+                specialFields[i].setValue(random.nextInt(MAX_BLOCKED) + 1);
+            } else {
                 specialFields[i].setEffect(Effect.MOVES);
-                specialFields[i].setValue(random.nextInt(12) - 6);
+                specialFields[i].setValue(random.nextInt(MAX_MOVE_DISTANCE * 2) - MAX_MOVE_DISTANCE);
             }
             specialFields[i].setIndex(random.nextInt(FIELD_START_INDEX + 1, FIELD_META_INDEX - 1));
         }
-        System.out.println();
     }
 
     public static boolean isSpecial(int index) {

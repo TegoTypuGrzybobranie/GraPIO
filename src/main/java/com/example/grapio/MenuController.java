@@ -23,7 +23,7 @@ public class MenuController {
         GameController gameController = loader.getController();
         gameController.initializeBoard(maxPlayers, playerName);
 
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -32,7 +32,7 @@ public class MenuController {
     @FXML
     private void toOptions(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("options-view.fxml")));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -44,10 +44,10 @@ public class MenuController {
         Parent root = loader.load();
 
         MenuController menuController = loader.getController();
-        menuController.updateOptionsSettings((int)playerSlider.getValue(),  new String[] {p1Name.getText(), p2Name.getText() ,p3Name.getText(), p4Name.getText()});
+        menuController.updateOptionsSettings((int) playerSlider.getValue(), new String[]{p1Name.getText(), p2Name.getText(), p3Name.getText(), p4Name.getText()});
 
 
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -61,7 +61,9 @@ public class MenuController {
     @FXML
     private Slider playerSlider;
     private int maxPlayers = 4;
-    private String[] playerName = {"Player 1", "Player 2", "Player 3", "Player 4"};
+    private String[] playerName = {
+            "Player 1", "Player 2", "Player 3", "Player 4"
+    };
 
 
     @FXML

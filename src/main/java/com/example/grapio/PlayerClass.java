@@ -13,14 +13,14 @@ public class PlayerClass {
         this.nickName = nickName;
     }
 
-    public boolean movePlayer(int move) {
+    public void movePlayer(int move) {
         if (move == 0 || finished) {
-            return false;
+            return;
         }
 
         if (blocked > 0) {
             blocked--;
-            return false;
+            return;
         }
 
         diceRollCount++;
@@ -42,18 +42,10 @@ public class PlayerClass {
             }
         }
 
-        return true;
     }
 
     public boolean isFinished() {
         return finished;
-    }
-    public short getBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(short blocked) {
-        this.blocked = blocked;
     }
 
     public String getNickName() {
@@ -62,10 +54,6 @@ public class PlayerClass {
 
     public int getPosition() {
         return position;
-    }
-
-    public int getDiceRollCount() {
-        return diceRollCount;
     }
 
 }
