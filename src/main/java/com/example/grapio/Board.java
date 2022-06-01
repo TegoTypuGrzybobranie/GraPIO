@@ -171,7 +171,7 @@ public class Board {
     private void setSpecialFields() {
         Random random = new Random();
         specialFields = new SpecialField[SPECIAL_FIELDS_NUMBER];
-        int[] indexes = {6, 13, 19, 21, 26, 30, 33, 37, 44, 49, 51, 54,};
+        int[] indexes = {6, 13, 20, 27, 36, 50};
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
 
             specialFields[i] = new SpecialField();
@@ -187,9 +187,11 @@ public class Board {
     }
 
     public static boolean isSpecial(int index) {
-        for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++)
-            if (specialFields[i].getIndex() == index)
+        for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
+            if (specialFields[i].getIndex() == index) {
                 return true;
+            }
+        }
 
         return false;
     }
