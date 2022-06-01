@@ -171,19 +171,18 @@ public class Board {
     private void setSpecialFields() {
         Random random = new Random();
         specialFields = new SpecialField[SPECIAL_FIELDS_NUMBER];
+        int[] indexes = {6, 13, 19, 21, 26, 30, 33, 37, 44, 49, 51, 54,};
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
 
-            int x = random.nextInt(2);
             specialFields[i] = new SpecialField();
-            if (x == 0) {
+            if (i % 2 == 0) {
                 specialFields[i].setEffect(Effect.BLOCKS);
                 specialFields[i].setValue(random.nextInt(2) + 1);
-            }
-            else {
+            } else {
                 specialFields[i].setEffect(Effect.MOVES);
                 specialFields[i].setValue(random.nextInt(12) - 6);
             }
-            specialFields[i].setIndex(random.nextInt(FIELD_START_INDEX + 1, FIELD_META_INDEX - 1));
+            specialFields[i].setIndex(indexes[i]);
         }
     }
 
