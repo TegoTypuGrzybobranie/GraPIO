@@ -68,11 +68,9 @@ public class Board {
     private static SpecialField[] specialFields;
     private final int maxPlayers;
 
-<<<<<<< HEAD
-    private int[] rank;
-=======
+
     private final int[] rank;
->>>>>>> origin/main
+
     private int placeIndex = 0;
 
     private int whichPlayer = 0;
@@ -119,17 +117,10 @@ public class Board {
         int position = players.get(whichPlayer).getPosition();
         if (position == FIELD_META_INDEX) {
             //META IMAGES
-<<<<<<< HEAD
             fieldsImg.get(position + FIELD_START_INDEX + whichPlayer).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + ((Integer) whichPlayer).toString() + ".png"))));
         } else {
             //STANDARD IMAGES
             fieldsImg.get(position + FIELD_START_INDEX).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + ((Integer) whichPlayer).toString() + ".png"))));
-=======
-            fieldsImg.get(position + FIELD_START_INDEX + whichPlayer).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + whichPlayer + ".png"))));
-        } else {
-            //STANDARD IMAGES
-            fieldsImg.get(position + FIELD_START_INDEX).setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + whichPlayer + ".png"))));
->>>>>>> origin/main
         }
     }
 
@@ -177,78 +168,23 @@ public class Board {
         }
         return 0;
     }
-
     private void setSpecialFields() {
         Random random = new Random();
         specialFields = new SpecialField[SPECIAL_FIELDS_NUMBER];
+        for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
 
-<<<<<<< HEAD
             int x = random.nextInt(2);
             specialFields[i] = new SpecialField();
             if (x == 0) {
                 specialFields[i].setEffect(Effect.BLOCKS);
                 specialFields[i].setValue(random.nextInt(2) + 1);
-            } else {
+            }
+            else {
                 specialFields[i].setEffect(Effect.MOVES);
                 specialFields[i].setValue(random.nextInt(12) - 6);
             }
             specialFields[i].setIndex(random.nextInt(FIELD_START_INDEX + 1, FIELD_META_INDEX - 1));
         }
-        System.out.println();
-=======
-        specialFields[0].setIndex(5);
-        specialFields[0].setValue(2);
-        specialFields[0].setEffect(Effect.BLOCKS);
-
-        specialFields[1].setIndex(11);
-        specialFields[1].setValue(-6);
-        specialFields[1].setEffect(Effect.MOVES);
-
-        specialFields[2].setIndex(14);
-        specialFields[2].setValue(5);
-        specialFields[2].setEffect(Effect.MOVES);
-
-        specialFields[3].setIndex(19);
-        specialFields[3].setValue(2);
-        specialFields[3].setEffect(Effect.BLOCKS);
-
-        specialFields[4].setIndex(25);
-        specialFields[4].setValue(-6);
-        specialFields[4].setEffect(Effect.MOVES);
-
-        specialFields[5].setIndex(29);
-        specialFields[5].setValue(1);
-        specialFields[5].setEffect(Effect.BLOCKS);
-
-        specialFields[6].setIndex(31);
-        specialFields[6].setValue(1);
-        specialFields[6].setEffect(Effect.BLOCKS);
-
-        specialFields[7].setIndex(34);
-        specialFields[7].setValue(-4);
-        specialFields[7].setEffect(Effect.MOVES);
-
-        specialFields[8].setIndex(39);
-        specialFields[8].setValue(1);
-        specialFields[8].setEffect(Effect.BLOCKS);
-
-        specialFields[9].setIndex(45);
-        specialFields[9].setValue(1);
-        specialFields[9].setEffect(Effect.MOVES);
-
-        specialFields[10].setIndex(47);
-        specialFields[10].setValue(3);
-        specialFields[10].setEffect(Effect.MOVES);
-
-        specialFields[11].setIndex(50);
-        specialFields[11].setValue(2);
-        specialFields[11].setEffect(Effect.BLOCKS);
-
-        specialFields[12].setIndex(58);
-        specialFields[12].setValue(-5);
-        specialFields[12].setEffect(Effect.MOVES);
-
->>>>>>> origin/main
     }
 
     public static boolean isSpecial(int index) {
