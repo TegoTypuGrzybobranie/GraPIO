@@ -1,8 +1,13 @@
 package com.example.grapio;
 
 
+import javafx.animation.PauseTransition;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
@@ -48,16 +53,12 @@ public class Board {
     public static final int FIELD_META_INDEX = 57;
     public static final int SPECIAL_FIELDS_NUMBER = 5;
 
-    public static final int MAX_BLOCKED = 2;
-    public static final int MAX_MOVE_DISTANCE = 6;
-    // How many effects do we implement
-    public static final int EFFECT_NUMBER = 2;
-
-    public Board(List<ImageView> fieldsImg, int maxPlayers, List<PlayerClass> players) {
+    public Board(List<ImageView> fieldsImg, int maxPlayers, List<PlayerClass> players, Label blockLabel) {
         setSpecialFields();
         this.fieldsImg = fieldsImg;
         this.maxPlayers = maxPlayers;
         this.players = players;
+        this.blockLabel = blockLabel;
 
         rank = new int[maxPlayers];
     }
@@ -65,8 +66,12 @@ public class Board {
     public Dice dice = new Dice();
     private final List<ImageView> fieldsImg;
     private final List<PlayerClass> players;
-    private static SpecialField[] specialFields;
+    private SpecialField[] specialFields;
     private final int maxPlayers;
+
+    @FXML
+    private Label blockLabel;
+    private final PauseTransition pause = new PauseTransition(Duration.seconds(3));
 
 
     private final int[] rank;
@@ -95,7 +100,12 @@ public class Board {
     public boolean nextPlayer() {
         for (int i = 0; i < maxPlayers; i++) {
             whichPlayer = whichPlayer + 1 < maxPlayers ? whichPlayer + 1 : 0;
+
             if (!players.get(whichPlayer).isFinished()) {
+                if (players.get(whichPlayer).getBlocked() > 0) {
+                    players.get(whichPlayer).decreaseBlocked();
+                    continue;
+                }
                 return true;
             }
         }
@@ -137,6 +147,20 @@ public class Board {
 
     public void tryMove(int move) {
         int positionToMove = players.get(whichPlayer).getPosition() + move;
+        boolean blocked = false;
+        int additionalMove = 0;
+
+        if (isSpecial(positionToMove)) {
+            if (getEffect(positionToMove) == Effect.BLOCKS) {
+                blocked = true;
+                System.out.println("Blocked for " + getValue(positionToMove));
+            } else {
+                System.out.println("Moves for " + getValue(positionToMove));
+                additionalMove = getValue(positionToMove);
+                System.out.println("Ok");
+            }
+        }
+
         if (positionToMove == 0)
             return;
 
@@ -151,16 +175,27 @@ public class Board {
         }
 
         moveCurrentPlayer(move);
+
+        if(blocked) {
+            players.get(whichPlayer).setBlocked((short)getValue(positionToMove));
+            blockLabel.setText("Pomijasz " + players.get(whichPlayer).getBlocked() + " tury");
+            pause.setOnFinished(e -> blockLabel.setText(""));
+            pause.play();
+        }
+
+        if(additionalMove != 0) {
+            tryMove(additionalMove);
+        }
     }
 
-    public static Effect getEffect(int index) {
+    private Effect getEffect(int index) {
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++)
             if (specialFields[i].getIndex() == index)
                 return specialFields[i].getEffect();
         return null;
     }
 
-    public static int getValue(int index) {
+    private int getValue(int index) {
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
             if (specialFields[i].getIndex() == index) {
                 return specialFields[i].getValue();
@@ -175,7 +210,7 @@ public class Board {
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
 
             specialFields[i] = new SpecialField();
-            if (i % 2 == 0) {
+            if (i % 2 != 0) {
                 specialFields[i].setEffect(Effect.BLOCKS);
                 specialFields[i].setValue(random.nextInt(2) + 1);
             } else {
@@ -186,7 +221,7 @@ public class Board {
         }
     }
 
-    public static boolean isSpecial(int index) {
+    private boolean isSpecial(int index) {
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
             if (specialFields[i].getIndex() == index) {
                 return true;

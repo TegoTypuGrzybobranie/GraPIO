@@ -30,17 +30,6 @@ public class PlayerClass {
             finished = true;
         }
 
-        if (Board.isSpecial(position)) {
-            if (Board.getEffect(position) == Effect.BLOCKS) {
-                this.blocked += Board.getValue(position);
-                System.out.println("Blocked for " + Board.getValue(position));
-            } else {
-                System.out.println("Moves for " + Board.getValue(position));
-                position += Board.getValue(position);
-                System.out.println("Ok");
-            }
-        }
-
         return true;
     }
 
@@ -50,6 +39,13 @@ public class PlayerClass {
 
     public short getBlocked() {
         return blocked;
+    }
+
+    public void decreaseBlocked() {
+        blocked--;
+        if(blocked < 0) {
+            blocked = 0;
+        }
     }
 
     public void setBlocked(short blocked) {
