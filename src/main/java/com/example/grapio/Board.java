@@ -71,7 +71,7 @@ public class Board {
 
     @FXML
     private Label blockLabel;
-    private final PauseTransition pause = new PauseTransition(Duration.seconds(3));
+    private final PauseTransition pause = new PauseTransition(Duration.seconds(2));
 
 
     private final int[] rank;
@@ -178,8 +178,9 @@ public class Board {
 
         if(blocked) {
             players.get(whichPlayer).setBlocked((short)getValue(positionToMove));
-            blockLabel.setText("Pomijasz " + players.get(whichPlayer).getBlocked() + " tury");
-            pause.setOnFinished(e -> blockLabel.setText(""));
+            blockLabel.setText("Czekasz: " + players.get(whichPlayer).getBlocked() + " tur");
+            blockLabel.setVisible(true);
+            pause.setOnFinished(e -> blockLabel.setVisible(false));
             pause.play();
         }
 

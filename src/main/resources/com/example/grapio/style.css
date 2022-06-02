@@ -53,3 +53,10 @@
     -fx-background-position: center;
     -fx-background-image: url('images/ok.png');
 }
+
+.blockLabel {
+    -fx-background-color: #d5951d;
+    -fx-border-width: 1;
+    -fx-border-color: #000;
+    -fx-text-fill: #fff;
+}
