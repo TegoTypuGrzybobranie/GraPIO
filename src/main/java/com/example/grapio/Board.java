@@ -153,11 +153,14 @@ public class Board {
         if (isSpecial(positionToMove)) {
             if (getEffect(positionToMove) == Effect.BLOCKS) {
                 blocked = true;
-                System.out.println("Blocked for " + getValue(positionToMove));
             } else {
-                System.out.println("Moves for " + getValue(positionToMove));
                 additionalMove = getValue(positionToMove);
-                System.out.println("Ok");
+                if (additionalMove > 0)
+                    blockLabel.setText("Przesuwasz się o " + additionalMove + " pól do przodu");
+                else blockLabel.setText("Przesuwasz się o " + additionalMove + " pól do tyłu");
+                blockLabel.setVisible(true);
+                pause.setOnFinished(e -> blockLabel.setVisible(false));
+                pause.play();
             }
         }
 
@@ -176,9 +179,11 @@ public class Board {
 
         moveCurrentPlayer(move);
 
-        if(blocked) {
+        if (blocked) {
             players.get(whichPlayer).setBlocked((short)getValue(positionToMove));
-            blockLabel.setText("Czekasz: " + players.get(whichPlayer).getBlocked() + " tur");
+            if (players.get(whichPlayer).getBlocked() == 1)
+                blockLabel.setText("Czekasz: 1 turę");
+            else blockLabel.setText("Czekasz: 2 tury");
             blockLabel.setVisible(true);
             pause.setOnFinished(e -> blockLabel.setVisible(false));
             pause.play();
