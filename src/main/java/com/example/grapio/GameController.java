@@ -37,7 +37,7 @@ public class GameController {
     private final PauseTransition pause = new PauseTransition(Duration.seconds(1));
 
     @FXML
-    private Label playerLabel, rankList;
+    private Label playerLabel, rankList, blockLabel;
 
     @FXML
     private ImageView playerImage, diceImage, rankImage;
@@ -79,7 +79,7 @@ public class GameController {
         for(int i = 0; i < maxPlayers; i++)
             players.add(new PlayerClass(playerName[i]));
 
-        board = new Board(fieldsImg, maxPlayers, players);
+        board = new Board(fieldsImg, maxPlayers, players, blockLabel);
 
         playerLabel.setText(board.getPlayers(0).getNickName());
 
