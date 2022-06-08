@@ -51,7 +51,7 @@ class SpecialField {
 public class Board {
     private static final int FIELD_START_INDEX = 3;
     public static final int FIELD_META_INDEX = 57;
-    public static final int SPECIAL_FIELDS_NUMBER = 5;
+    public static final int SPECIAL_FIELDS_NUMBER = 6;
 
     public Board(List<ImageView> fieldsImg, int maxPlayers, List<PlayerClass> players, Label blockLabel) {
         setSpecialFields();
@@ -155,7 +155,7 @@ public class Board {
                 blocked = true;
                 System.out.println("Blocked for " + getValue(positionToMove));
             } else {
-                System.out.println("Moves for " + getValue(positionToMove));
+                System.out.println(getPlayers(getWhichPlayer()).getNickName() + " moves for " + getValue(positionToMove));
                 additionalMove = getValue(positionToMove);
                 System.out.println("Ok");
             }
@@ -208,6 +208,7 @@ public class Board {
         Random random = new Random();
         specialFields = new SpecialField[SPECIAL_FIELDS_NUMBER];
         int[] indexes = {6, 13, 20, 27, 36, 50};
+        int[] movesFor = {-4, -3, -2, -1, 1, 2, 3, 4, 5, 6};
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
 
             specialFields[i] = new SpecialField();
@@ -216,7 +217,7 @@ public class Board {
                 specialFields[i].setValue(random.nextInt(2) + 1);
             } else {
                 specialFields[i].setEffect(Effect.MOVES);
-                specialFields[i].setValue(random.nextInt(12) - 6);
+                specialFields[i].setValue(movesFor[random.nextInt(10)]);
             }
             specialFields[i].setIndex(indexes[i]);
         }
