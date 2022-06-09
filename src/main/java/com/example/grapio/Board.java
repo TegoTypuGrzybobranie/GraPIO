@@ -13,7 +13,7 @@ import java.util.Objects;
 import java.util.Random;
 
 enum Effect {
-    BLOCKS, MOVES
+    BLOCKS, MOVES, ADDIT_THROW
 }
 
 class SpecialField {
@@ -51,7 +51,7 @@ class SpecialField {
 public class Board {
     private static final int FIELD_START_INDEX = 3;
     public static final int FIELD_META_INDEX = 57;
-    public static final int SPECIAL_FIELDS_NUMBER = 6;
+    public static final int SPECIAL_FIELDS_NUMBER = 9;
 
     public Board(List<ImageView> fieldsImg, int maxPlayers, List<PlayerClass> players, Label blockLabel) {
         setSpecialFields();
@@ -112,6 +112,10 @@ public class Board {
         return false;
     }
 
+    public void revertPlayer() {
+        whichPlayer = whichPlayer > 0 ? whichPlayer - 1 : maxPlayers - 1;
+    }
+
     private void updateLastFieldImage() {
         int position = players.get(whichPlayer).getPosition();
         if (position == 0) {
@@ -148,12 +152,13 @@ public class Board {
     public void tryMove(int move) {
         int positionToMove = players.get(whichPlayer).getPosition() + move;
         boolean blocked = false;
+        boolean additionalThrow = false;
         int additionalMove = 0;
 
         if (isSpecial(positionToMove)) {
             if (getEffect(positionToMove) == Effect.BLOCKS) {
                 blocked = true;
-            } else {
+            } else if (getEffect(positionToMove) == Effect.MOVES) {
                 if (getValue(positionToMove) == 1 || getValue(positionToMove) == -1)
                     blockLabel.setText("Przesuwasz się o " + getValue(positionToMove) + " pole");
                 else if (getValue(positionToMove) == 2 || getValue(positionToMove) == 3 || getValue(positionToMove) == 4 || getValue(positionToMove) == -2 || getValue(positionToMove) == -3 || getValue(positionToMove) == -4)
@@ -163,6 +168,9 @@ public class Board {
                 pause.setOnFinished(e -> blockLabel.setVisible(false));
                 pause.play();
                 additionalMove = getValue(positionToMove);
+            }
+            else if(getEffect(positionToMove) == Effect.ADDIT_THROW) {
+                additionalThrow = true;
             }
         }
 
@@ -193,6 +201,15 @@ public class Board {
 
         if (additionalMove != 0) {
             tryMove(additionalMove);
+            return;
+        }
+
+        if (additionalThrow){
+            blockLabel.setText("Dodatkowy rzut!");
+            blockLabel.setVisible(true);
+            pause.setOnFinished(e -> blockLabel.setVisible(false));
+            pause.play();
+            revertPlayer();
         }
     }
 
@@ -215,12 +232,15 @@ public class Board {
     private void setSpecialFields() {
         Random random = new Random();
         specialFields = new SpecialField[SPECIAL_FIELDS_NUMBER];
-        int[] indexes = {6, 13, 20, 27, 36, 50};
+        int[] indexes = {6, 9, 13, 18, 20, 27, 31, 36, 50};
         int[] movesFor = {-4, -3, -2, -1, 1, 2, 3, 4, 5, 6};
         for (int i = 0; i < SPECIAL_FIELDS_NUMBER; i++) {
 
             specialFields[i] = new SpecialField();
-            if (i % 2 != 0) {
+            if(indexes[i] == 9 || indexes[i] == 18 || indexes[i] == 31) {
+                specialFields[i].setEffect(Effect.ADDIT_THROW);
+                specialFields[i].setValue(0);
+            } else if (indexes[i] % 2 != 0) {
                 specialFields[i].setEffect(Effect.BLOCKS);
                 specialFields[i].setValue(random.nextInt(2) + 1);
             } else {
