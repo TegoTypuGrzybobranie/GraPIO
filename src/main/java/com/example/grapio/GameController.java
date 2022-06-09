@@ -28,7 +28,7 @@ public class GameController {
 
     @FXML
     private ImageView f0p0, f0p1, f0p2, f0p3, //start
-                f57p0, f57p1, f57p2, f57p3; //meta
+            f57p0, f57p1, f57p2, f57p3; //meta
 
     @FXML
     private Button btnThrow, btnEnd;
@@ -48,19 +48,19 @@ public class GameController {
         showDice(roll);
 
         board.tryMove(roll);
-        if(!board.nextPlayer()) {
+        if (!board.nextPlayer()) {
             endGame();
             return;
         }
 
         playerLabel.setText(board.getPlayers(board.getWhichPlayer()).getNickName());
-        playerImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" +((Integer)board.getWhichPlayer()).toString()+".png"))));
+        playerImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/players/" + ((Integer) board.getWhichPlayer()).toString() + ".png"))));
     }
 
     @FXML
     private void toMenu(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu-view.fxml")));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -76,7 +76,7 @@ public class GameController {
                 f51, f52, f53, f54, f55, f56, f57p0, f57p1, f57p2, f57p3);
 
         List<PlayerClass> players = new ArrayList<>();
-        for(int i = 0; i < maxPlayers; i++)
+        for (int i = 0; i < maxPlayers; i++)
             players.add(new PlayerClass(playerName[i]));
 
         board = new Board(fieldsImg, maxPlayers, players, blockLabel);
@@ -96,11 +96,11 @@ public class GameController {
     }
 
     private void showDice(int num) {
-        if(num < 0 || num > 6) {
+        if (num < 0 || num > 6) {
             return;
         }
 
-        diceImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/dice/dice" +((Integer)num).toString()+".png"))));
+        diceImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/dice/dice" + ((Integer) num).toString() + ".png"))));
         pause.setOnFinished(e -> diceImage.setImage(null));
         pause.play();
     }

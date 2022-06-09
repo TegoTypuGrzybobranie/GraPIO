@@ -16,38 +16,6 @@ enum Effect {
     BLOCKS, MOVES
 }
 
-class SpecialField {
-    Effect effect;
-    // Number of rounds it's blocked or number of fields it moves with possibility of being negative
-    private int value;
-    private int index;
-
-    SpecialField() {}
-
-    public void setEffect(Effect effect) {
-        this.effect = effect;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
-    public int getIndex() {
-        return this.index;
-    }
-
-    public Effect getEffect() {
-        return effect;
-    }
-
-    public int getValue() {
-        return value;
-    }
-}
-
 public class Board {
     private static final int FIELD_START_INDEX = 3;
     public static final int FIELD_META_INDEX = 57;
@@ -153,11 +121,16 @@ public class Board {
         if (isSpecial(positionToMove)) {
             if (getEffect(positionToMove) == Effect.BLOCKS) {
                 blocked = true;
-                System.out.println("Blocked for " + getValue(positionToMove));
             } else {
-                System.out.println(getPlayers(getWhichPlayer()).getNickName() + " moves for " + getValue(positionToMove));
+                if (getValue(positionToMove) == 1 || getValue(positionToMove) == -1)
+                    blockLabel.setText("Przesuwasz się o " + getValue(positionToMove) + " pole");
+                else if (getValue(positionToMove) == 2 || getValue(positionToMove) == 3 || getValue(positionToMove) == 4 || getValue(positionToMove) == -2 || getValue(positionToMove) == -3 || getValue(positionToMove) == -4)
+                    blockLabel.setText("Przesuwasz się o " + getValue(positionToMove) + " pola");
+                else blockLabel.setText("Przesuwasz się o " + getValue(positionToMove) + " pól");
+                blockLabel.setVisible(true);
+                pause.setOnFinished(e -> blockLabel.setVisible(false));
+                pause.play();
                 additionalMove = getValue(positionToMove);
-                System.out.println("Ok");
             }
         }
 
@@ -176,15 +149,17 @@ public class Board {
 
         moveCurrentPlayer(move);
 
-        if(blocked) {
-            players.get(whichPlayer).setBlocked((short)getValue(positionToMove));
-            blockLabel.setText("Czekasz: " + players.get(whichPlayer).getBlocked() + " tur");
+        if (blocked) {
+            players.get(whichPlayer).setBlocked((short) getValue(positionToMove));
+            if (players.get(whichPlayer).getBlocked() == 1)
+                blockLabel.setText("Czekasz: 1 turę");
+            else blockLabel.setText("Czekasz: 2 tury");
             blockLabel.setVisible(true);
             pause.setOnFinished(e -> blockLabel.setVisible(false));
             pause.play();
         }
 
-        if(additionalMove != 0) {
+        if (additionalMove != 0) {
             tryMove(additionalMove);
         }
     }
@@ -204,6 +179,7 @@ public class Board {
         }
         return 0;
     }
+
     private void setSpecialFields() {
         Random random = new Random();
         specialFields = new SpecialField[SPECIAL_FIELDS_NUMBER];
