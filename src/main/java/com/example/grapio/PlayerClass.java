@@ -43,7 +43,7 @@ public class PlayerClass {
 
     public void decreaseBlocked() {
         blocked--;
-        if(blocked < 0) {
+        if (blocked < 0) {
             blocked = 0;
         }
     }
