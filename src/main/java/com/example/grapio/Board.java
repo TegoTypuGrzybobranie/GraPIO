@@ -16,6 +16,38 @@ enum Effect {
     BLOCKS, MOVES
 }
 
+class SpecialField {
+    Effect effect;
+    // Number of rounds it's blocked or number of fields it moves with possibility of being negative
+    private int value;
+    private int index;
+
+    SpecialField() {}
+
+    public void setEffect(Effect effect) {
+        this.effect = effect;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+    public int getIndex() {
+        return this.index;
+    }
+
+    public Effect getEffect() {
+        return effect;
+    }
+
+    public int getValue() {
+        return value;
+    }
+}
+
 public class Board {
     private static final int FIELD_START_INDEX = 3;
     public static final int FIELD_META_INDEX = 57;
